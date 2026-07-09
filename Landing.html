@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="oscuro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElBro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;500;700;800&family=Space+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ==================== NAVEGACION ==================== -->
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <a href="#inicio" class="nav-logo" aria-label="ElBro — Inicio">
+      <span class="nav-logo-marco">
+        <img
+          src="logo.png"
+          alt="ElBro"
+          class="logo-img"
+          onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend', '<span style=\'position:relative;z-index:1;font-family:var(--fuente-display);font-weight:800;font-size:0.85rem;color:var(--texto-principal)\'>EB</span>')"
+        />
+      </span>
+    </a>
+
+    <ul class="nav-enlaces">
+      <li><a href="#ecosistema"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Familia</a></li>
+      <li><a href="#filosofia"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg> Filosofía</a></li>
+      <li><a href="#brogamer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="13" r="1"/><circle cx="18" cy="11" r="1"/><path d="M17.32 5H6.68a4 4 0 0 0-3.94 3.4l-1 6.5A3 3 0 0 0 4.7 18.5a3 3 0 0 0 2.55-1.42L8.5 15h7l1.25 2.08a3 3 0 0 0 2.55 1.42 3 3 0 0 0 2.96-3.6l-1-6.5A4 4 0 0 0 17.32 5z"/></svg> BroGamer</a></li>
+      <li><a href="#brolearn"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> BroLearn</a></li>
+      <li><a href="#broweb"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> BroWeb</a></li>
+      <li><a href="#brosoftware"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="12" rx="2"/><line x1="8" y1="20" x2="16" y2="20"/><line x1="12" y1="16" x2="12" y2="20"/></svg> BroSoftware</a></li>
+    </ul>
+
+    <button class="nav-boton-tema" id="botonTema" aria-label="Cambiar tema" title="Cambiar modo claro/oscuro">☀️</button>
+    <button class="nav-hamburger" id="btnHamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MENU MOVIL -->
+  <div class="nav-menu-movil" id="menuMovil" role="dialog" aria-modal="true">
+    <button class="nav-cerrar" id="btnCerrar" aria-label="Cerrar menú">✕</button>
+    <a href="#ecosistema" class="enlace-movil"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Familia </a>
+    <a href="#filosofia"  class="enlace-movil"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg> Filosofía</a>
+    <a href="#brogamer"   class="enlace-movil"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="13" r="1"/><circle cx="18" cy="11" r="1"/><path d="M17.32 5H6.68a4 4 0 0 0-3.94 3.4l-1 6.5A3 3 0 0 0 4.7 18.5a3 3 0 0 0 2.55-1.42L8.5 15h7l1.25 2.08a3 3 0 0 0 2.55 1.42 3 3 0 0 0 2.96-3.6l-1-6.5A4 4 0 0 0 17.32 5z"/></svg> BroGamer</a>
+    <a href="#brolearn"   class="enlace-movil"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> BroLearn</a>
+    <a href="#broweb"     class="enlace-movil"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> BroWeb</a>
+    <a href="#brosoftware" class="enlace-movil"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="12" rx="2"/><line x1="8" y1="20" x2="16" y2="20"/><line x1="12" y1="16" x2="12" y2="20"/></svg> BroSoftware</a>
+  </div>
+
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="inicio" aria-label="Sección principal">
+    <div class="hero-orbe hero-orbe-1" aria-hidden="true"></div>
+    <div class="hero-orbe hero-orbe-2" aria-hidden="true"></div>
+    <div class="hero-orbe hero-orbe-3" aria-hidden="true"></div>
+
+    <h1 class="hero-titulo">
+      Disfruta de tu tecnología <br  />
+      <span class="gradiente">sin gastar una fortuna</span>
+    </h1>
+
+    <p class="hero-subtitulo">
+      Disfrutar y aprovechar la tecnología no debería ser sinónimo de gastar mucho.
+      ElBro te acompaña en el trabajo, la escuela y tu tiempo libre.
+    </p>
+
+    <div class="int-visual">
+          <img  src="int.png" alt="Ilustración de entrada de ElBro" class="int-img img-animar" />
+    </div>
+
+    <div class="hero-ctas">
+      <a href="#ecosistema" class="boton-primario">
+        Conoce a tus Bros
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href="#filosofia" class="boton-secundario">
+        ¿Por qué elegir ElBro?
+        <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+
+  <hr class="separador" />
+
+
+  <!-- ==================== ECOSISTEMA ==================== -->
+  <section class="ecosistema" id="ecosistema" aria-labelledby="ecosistema-titulo">
+    <div class="contenedor">
+
+      <div class="ecosistema-encabezado">
+        <div class="seccion-etiqueta"> Nuestra Familia</div>
+        <h2 class="ecosistema-titulo" id="ecosistema-titulo">
+          Cuatro Bros,<br />Una sola familia.
+        </h2>
+        <p class="ecosistema-descripcion">
+          Cada Bro tiene su propia personalidad, selecciona el Bro que puede ayudarte hoy...
+        </p>
+      </div>
+
+      <div class="figuras-grid">
+
+        <!-- FIGURA BROGAMER -->
+        <div class="figura-item" id="brogamer" style="--acento:#d7a523;">
+          <a href="brogamer.html" class="figura-escenario" aria-label="BroGamer — Entretenimiento y videojuegos">
+            <div class="figura-luz" aria-hidden="true"></div>
+            <div class="figura-visual">
+              <img
+                src="gamercitos.png"
+                alt="Figura 3D de BroGamer jugando videojuegos"
+                class="figura-img img-animar"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              />
+              <span class="figura-respaldo" style="display:none;" aria-hidden="true">🎮</span>
+            </div>
+            <div class="figura-piso" aria-hidden="true"></div>
+            <div class="figura-etiqueta">
+              <span class="figura-nombre">BroGamer</span>
+              <span class="figura-etiqueta-cat">Entretenimiento <br />y Videojuegos</span>
+            </div>
+          </a>
+          <div class="figura-tooltip" role="tooltip">
+            <div class="figura-tooltip-titulo">¿Te gusta jugar?</div>
+            <p class="figura-tooltip-texto">Explora mi catalogo de juegos en oferta y empieza a disfrutar al mejor precio.<br/> <br/> Divertirte no debe costar un ojo de la cara...</p>
+          </div>
+        </div>
+
+        <!-- FIGURA BROLEARN -->
+        <div class="figura-item" id="brolearn" style="--acento:#7fa672;">
+          <a href="#brolearn" class="figura-escenario" aria-label="BroLearn — Educación y autonomía digital">
+            <div class="figura-luz" aria-hidden="true"></div>
+            <div class="figura-visual">
+              <img
+                src="brolearncito.png"
+                alt="Figura 3D de BroLearn estudiando con un libro y una computadora"
+                class="figura-img img-animar"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              />
+              <span class="figura-respaldo" style="display:none;" aria-hidden="true">📚</span>
+            </div>
+            <div class="figura-piso" aria-hidden="true"></div>
+            <div class="figura-etiqueta">
+              <span class="figura-nombre">BroLearn</span>
+              <span class="figura-etiqueta-cat">Educación Digital</span>
+            </div>
+          </a>
+          <div class="figura-tooltip" role="tooltip">
+            <div class="figura-tooltip-titulo">Aprende a tu ritmo</div>
+            <p class="figura-tooltip-texto">Con acompañamiento real y autonomía tecnológica, conoce como navegar en el mundo digital. <br/> <br/> No le tengas miedo a la era digital...</p>
+          </div>
+        </div>
+
+        <!-- FIGURA BROWEB -->
+        <div class="figura-item" id="broweb" style="--acento:#c1121f;">
+          <a href="#broweb" class="figura-escenario" aria-label="BroWeb — Desarrollo y soluciones web">
+            <div class="figura-luz" aria-hidden="true"></div>
+            <div class="figura-visual">
+              <img
+                src="browebcito.png"
+                alt="Figura 3D de BroWeb navegando en internet y diseñando"
+                class="figura-img img-animar"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              />
+              <span class="figura-respaldo" style="display:none;" aria-hidden="true">🌐</span>
+            </div>
+            <div class="figura-piso" aria-hidden="true"></div>
+            <div class="figura-etiqueta">
+              <span class="figura-nombre">BroWeb</span>
+              <span class="figura-etiqueta-cat">Desarrollo web</span>
+            </div>
+          </a>
+          <div class="figura-tooltip" role="tooltip">
+            <div class="figura-tooltip-titulo">¿Tu negocio es increible?</div>
+            <p class="figura-tooltip-texto">Hagamos que se destaque en el mundo digital.<br/> <br/> Crea un sitio web que le diga al mundo lo que eres...</p>
+          </div>
+        </div>
+
+        <!-- FIGURA BROSOFTWARE -->
+        <div class="figura-item" id="brosoftware" style="--acento:#2563EB;">
+          <a href="#brosoftware" class="figura-escenario" aria-label="BroSoftware — Programación y desarrollo de software">
+            <div class="figura-luz" aria-hidden="true"></div>
+            <div class="figura-visual">
+              <img
+                src="brosof.png"
+                alt="Figura 3D de BroSoftware programando frente a una computadora"
+                class="figura-img img-animar"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              />
+              <span class="figura-respaldo" style="display:none;" aria-hidden="true">💻</span>
+            </div>
+            <div class="figura-piso" aria-hidden="true"></div>
+            <div class="figura-etiqueta">
+              <span class="figura-nombre">BroSoftware</span>
+              <span class="figura-etiqueta-cat">Programas <br/>e instalación</span>
+            </div>
+          </a>
+          <div class="figura-tooltip" role="tooltip">
+            <div class="figura-tooltip-titulo">Software para tu día a día</div>
+            <p class="figura-tooltip-texto">Te ayudo a tener las mejores herramientas a un clic de distancia. <br/> <br/> Licencias y programas originales al mejor precio...</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="separador" />
+
+
+  <!-- ==================== FRASE GRANDE ==================== -->
+  <section class="frase-seccion" aria-hidden="true">
+    <div class="contenedor">
+      <p class="frase-texto">
+        "La tecnología no debería sentirse<br />
+        como un privilegio.<br />
+        <span class="resaltado">Debería sentirse tuya.</span>"
+      </p>
+    </div>
+  </section>
+
+  <hr class="separador" />
+
+
+  <!-- ==================== FILOSOFIA ==================== -->
+  <section class="filosofia" id="filosofia" aria-labelledby="filosofia-titulo">
+    <div class="contenedor">
+      <div class="filosofia-inner">
+
+        <div class="filosofia-contenido">
+          <div class="seccion-etiqueta">¿Quiénes somos?</div>
+          <h2 class="filosofia-titulo" id="filosofia-titulo">
+            Tecnología para<br />todos y no para pocos
+          </h2>
+          <p class="filosofia-texto">
+            En ElBro creemos que disfrutar y aprovechar la tecnología no es sinónimo de gastar mucho. Nuestra misión es hacer que la tecnología sea algo que disfrutes en tu trabajo, escuela o tiempo libre, haciéndola accesible y fácil de entender.
+          </p>
+          <p class="filosofia-texto">
+            Somos una familia con mentalidad grande: conectamos personas con ideas y con la tecnología que necesitan para crecer. Ninguna duda es demasiado pequeña, ningún proyecto es demasiado grande. Estamos aquí para ayudarte a que la tecnología sea tu aliada, no un obstáculo.
+          </p>
+
+          <div class="filosofia-valores">
+            <!--  ===== SOlUCION 2 ===== -->
+            <div class="valor-item">
+              <div class="valor-icono">
+                <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                </svg>
+              </div>
+              <div class="valor-texto">
+                <h4>Personalización total</h4>
+                <p>Nos adaptamos totalmente a tu estilo y personalidad, ofreciendo soluciones únicas para cada uno de nuestros clientes.</p>
+              </div>
+            </div>
+            <!-- ===== SOlUCION 2 ===== -->
+            <div class="valor-item">
+              <div class="valor-icono">
+                <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="30" height="30  " fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Cuerpo circular del reloj -->
+                  <circle cx="12" cy="12" r="10" />
+                  <!-- Aguja de las horas -->
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <div class="valor-texto">
+                <h4>Respuestas rápidas</h4>
+                <p>Te respondemos en tiempo record, sin comprometer la calidad ni la profesionalidad.</p>
+              </div>
+            </div>
+            <!-- ===== SOlUCION 3 ===== -->
+            <div class="valor-item">
+              <div class="valor-icono">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 2v6h-6"></path>
+                  <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+                  
+                  <path d="M3 22v-6h6"></path>
+                  <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+                </svg>
+              </div>
+              <div class="valor-texto">
+                <h4>Innovación constante</h4>
+                <p>Nos mantenemos al día con las últimas tendencias tecnológicas para ofrecerte soluciones innovadoras.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="filosofia-visual">
+          <img  src="filosofia.png" alt="Ilustración de filosofía de ElBro" class="filosofia-img img-animar" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+<div class="footer__socials">
+      <!--  
+      <a href="https://github.com/Velascoddavid" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="#3B82F6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a> -->
+      
+      <!--<a href="https://www.linkedin.com/in/david-velasco-0b0b0b/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="#3B82F6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>!-->
+
+      <a href="https://www.instagram.com/elbrogamer_/" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="#3B82F6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+
+      <a href="https://api.whatsapp.com/send?phone=527204454875&text=Hola%20David,%20quiero%20trabajar%20contigo%20%20para%20un%20proyecto." target="_blank" aria-label="WhatsApp" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="#3B82F6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+      </a>
+
+      <a href="https://somoselbro.com" target="_blank" aria-label="Sitio Web" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="#3B82F6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+      </a>
+
+    </div>
+
+
+
+  <script src="script.js"></script>
+</body>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="contenedor">
+      <div class="footer-inner">
+        <a href="#inicio" class="footer-logo">
+          <img
+            src="logo.png"
+            alt="ElBro"
+            class="logo-img"
+            onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend', '<span style=\'position:relative;z-index:1;font-family:var(--fuente-display);font-weight:800;font-size:0.85rem;color:var(--texto-principal)\'>EB</span>')">
+        </a>
+
+        <ul class="footer-links">
+          <li><a href="#brogamer">BroGamer</a></li>
+          <li><a href="#brolearn">BroLearn</a></li>
+          <li><a href="#broweb">BroWeb</a></li>
+          <li><a href="#brosoftware">BroSoftware</a></li>
+          <li><a href="#filosofia">Filosofía</a></li>
+        </ul>
+      </div>
+
+      <p class="footer-copy">
+        © 2026 ElBro — Todos los derechos reservados. <br />
+        <a href="mailto:elgamerb7@gmail.com" class="footer-email">
+          elgamerb7@gmail.com
+        </a>
+      </p>
+    </div>
+  </footer>
+</html>
